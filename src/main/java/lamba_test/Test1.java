@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -63,6 +64,15 @@ public class Test1 {
        WebElement submitButton=driver.findElement(By.xpath("//button[contains(text(),'Submit')]"));
         submitButton.click();
         Thread.sleep(2000);
+
+        List<WebElement> allMessages= driver.findElements(By.xpath("//p"));
+        for(int i =0; i < allMessages.size(); i++){
+             if(allMessages.get(i).getText().contains("Thanks")){
+                  System.out.println(allMessages.get(i).getText());
+                  Assert.assertTrue(allMessages.get(i).isDisplayed());
+             }
+        }
+        System.out.println("this one for github");
 
 
 
