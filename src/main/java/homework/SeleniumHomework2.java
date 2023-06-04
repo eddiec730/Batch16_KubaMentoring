@@ -160,7 +160,7 @@ public class SeleniumHomework2 {
         WebElement viewAllOrder=driver.findElement(By.xpath("//a[.='View all orders']"));
         viewAllOrder.click();
         List<WebElement> actualList=driver.findElements(By.xpath("//tr[2]//td"));
-        List<String> expectedList= Arrays.asList("CodeFish IT School","ScreenSaver","5","06/03/2023","2200 E devon","Des Plaines",
+        List<String> expectedList= Arrays.asList("CodeFish IT School","ScreenSaver","5","06/04/2023","2200 E devon","Des Plaines",
                 "Illinois","60018","MasterCard","444993876233","03/24");
         for(int i= 1,j=0; i <actualList.size()-1;i++,j++){
             Assert.assertEquals(BrowserUtils.getText(actualList.get(i)),expectedList.get(j));
